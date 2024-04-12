@@ -7,22 +7,14 @@
 </head>
 <body>
     <script>
-        function answer(stringy) {
-            document.getElementById("buttonanswer").innerText = stringy
-        }
+        var count = 0
         const answers = ["What's your favourite piece of clothing?", "If you had a magic cat, what would you name it?", "What's the best colour of 3DS?"]
-        function randomyQuestion() {
-            let whichAnswer = Math.floor(Math.random() * answers.length)
-            let theActualAnswerAsALittleStringy = answers[whichAnswer]
-            if (theActualAnswerAsALittleStringy == undefined) {
-                return "there aren't any left :("
-            }
-            answers.splice(whichAnswer,1)
-            return theActualAnswerAsALittleStringy;
-        }
         function button(number) {
-            if (number == 0) {
-                answer(randomyQuestion())
+            document.getElementById("buttonanswer").innerText = answers[count]
+            if (count != 2) {
+            count = count + 1
+            } else {
+                count = 0
             }
         }
     </script>
